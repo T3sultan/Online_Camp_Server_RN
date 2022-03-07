@@ -5,6 +5,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please give name"],
   },
+  bio: {
+    type: String,
+    required: [true, "Please give bio"],
+  },
   email: {
     type: String,
     unique: true,
@@ -16,9 +20,14 @@ const UserSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    //   unique:true,
+
     required: [true, "Please add password"],
     minlength: 8,
+    select: false,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
   },
 });
 

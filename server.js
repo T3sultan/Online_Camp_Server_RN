@@ -13,6 +13,9 @@ const app = express();
 //body parser
 app.use(express.json());
 
+// if (process.env.NODE_ENV === "development") {
+//   app.use(morgan("dev"));
+// }
 //mount all routes
 app.use("/api/v1/auth", auth);
 
