@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const auth = require("./routes/auth");
+const onlineCamp = require("./routes/OnlineCamp");
 const connectDB = require("./config/db");
 //load the config
 dotenv.config({ path: "./config/config.env" });
@@ -18,6 +19,7 @@ if (process.env.NODE_ENV === "development") {
 }
 //mount all routes
 app.use("/api/v1/auth", auth);
+app.use("/api/v1/onlineCamps", onlineCamp);
 
 const PORT = process.env.PORT || 5000;
 

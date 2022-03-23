@@ -11,13 +11,15 @@ const OnlineSchema = new mongoose.Schema({
   description: {
     type: String,
     required: [true, "Please add the description"],
+    maxlength: [500, "Description can not be more than 500 letters"],
   },
   website: {
     type: String,
-    required: [true, "Please add the website"],
+    maxlength: [20, "Website can not be 20 characters"],
   },
   contact: {
     type: String,
+    maxlength: [20, "Contact number can not be 20 characters"],
   },
   email: {
     type: String,
@@ -33,7 +35,7 @@ const OnlineSchema = new mongoose.Schema({
     required: [true, "Please add an address"],
   },
   careers: {
-    type: String,
+    type: [String],
     required: true,
   },
   jobReady: {
