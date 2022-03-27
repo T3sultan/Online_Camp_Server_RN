@@ -61,3 +61,15 @@ exports.login = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.getProfile = async (req, res, next) => {
+  try {
+    //user is already available due to the protect middleware
+
+    const user = req.user;
+    res.status(200).json({
+      success: true,
+      data: user,
+    });
+  } catch (error) {}
+};
