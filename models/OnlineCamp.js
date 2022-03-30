@@ -40,11 +40,11 @@ const OnlineSchema = new mongoose.Schema({
   },
   jobReady: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   isScholarship: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   createdAt: {
     type: Date,
